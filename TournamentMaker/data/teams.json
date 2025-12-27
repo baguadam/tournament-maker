@@ -1,0 +1,14 @@
+{
+  "teams": [
+    {
+      "id": "1",
+      "name": "First Team",
+      "players": ["Pifko", "Bagu", "Boti", "Roli", "Sanyi"]
+    },
+    {
+      "id": "2",
+      "name": "Second Team",
+      "players": ["Laci", "Karcsi", "Peti", "Zs. Laci"]
+    }
+  ]
+}

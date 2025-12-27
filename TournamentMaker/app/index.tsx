@@ -1,6 +1,10 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import useTeams from "./hooks/useTeams";
+import TeamViewer from "./components/TeamViewer";
 
 export default function Index() {
+  const { teams } = useTeams();
+
   return (
     <View
       style={{
@@ -9,7 +13,14 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      {teams.teams.map((team) => (
+        <TeamViewer
+          key={team.id}
+          id={team.id}
+          name={team.name}
+          players={team.players}
+        />
+      ))}
     </View>
   );
 }
