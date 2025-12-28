@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, View } from "react-native";
-import useTeams from "../hooks/useTeams";
-import TeamCard from "../components/TeamCard";
+import useTeams from "../../src/hooks/useTeams";
+import TeamCard from "../../src/components/TeamCard";
 
 const Teams = () => {
   const { teamsObject } = useTeams();
