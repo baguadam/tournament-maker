@@ -7,17 +7,21 @@ const useTeams = () => {
 
   // operations
   const addTeam = (team: Team) => {
-    setTeamsObject({ teams: [...teamsObject.teams, team] });
+    setTeamsObject((prev) => ({
+      ...prev,
+      teams: [...prev.teams, team],
+    }));
   };
 
   const addPlayer = (teamId: string, player: string) => {
-    const newTeams: Team[] = teamsObject.teams.map((team) =>
-      team.id === teamId
-        ? { ...team, players: [...team.players, player] }
-        : team
-    );
-
-    setTeamsObject({ teams: newTeams });
+    setTeamsObject((prev) => ({
+      ...prev,
+      teams: prev.teams.map((team) =>
+        team.id === teamId
+          ? { ...team, players: [...team.players, player] }
+          : team
+      ),
+    }));
   };
 
   return { teamsObject, addTeam, addPlayer };

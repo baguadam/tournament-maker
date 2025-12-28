@@ -6,15 +6,12 @@ const Teams = () => {
   const { teamsObject } = useTeams();
 
   return (
-    <View style={styles.container}>
-      <ScrollView>
+    <View style={styles.screen}>
+      <ScrollView contentContainerStyle={styles.list}>
         {teamsObject.teams.map((team) => (
-          <TeamCard
-            key={team.id}
-            id={team.id}
-            name={team.name}
-            players={team.players}
-          />
+          <View key={team.id} style={styles.cardWrap}>
+            <TeamCard name={team.name} players={team.players} />
+          </View>
         ))}
       </ScrollView>
     </View>
@@ -22,9 +19,15 @@ const Teams = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-    alignItems: "center",
+  screen: {
+    backgroundColor: "#f1f6f3ff",
+  },
+  list: {
+    padding: 30,
+    gap: 20,
+  },
+  cardWrap: {
+    width: "100%",
   },
 });
 

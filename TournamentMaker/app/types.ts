@@ -7,3 +7,9 @@ export interface Team {
 export interface Teams {
   teams: Team[];
 }
+
+// prop types
+export type TeamCardProps = {
+  name: string;
+  players: string[];
+};
