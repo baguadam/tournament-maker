@@ -8,6 +8,11 @@ export interface Teams {
   teams: Team[];
 }
 
+export interface TeamFormValues {
+  teamName: string;
+  players: { name: string }[];
+}
+
 // prop types
 export type TeamCardProps = {
   name: string;
