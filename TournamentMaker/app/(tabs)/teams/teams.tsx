@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, View } from "react-native";
-import useTeams from "../../src/hooks/useTeams";
-import TeamCard from "../../src/components/TeamCard";
+import useTeams from "../../../src/hooks/useTeams";
+import TeamCard from "../../../src/components/TeamCard";
 import { Link } from "expo-router";
 
 const Teams = () => {
@@ -15,7 +15,7 @@ const Teams = () => {
           </View>
         ))}
 
-        <Link href="../(teams)/create" style={styles.button}>
+        <Link href="/teams/create" style={styles.button}>
           Új csapat hozzáadása
         </Link>
       </ScrollView>
