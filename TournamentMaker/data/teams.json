@@ -9,6 +9,16 @@
       "id": "2",
       "name": "Second Team",
       "players": ["Laci", "Karcsi", "Peti", "Zs. Laci"]
+    },
+    {
+      "id": "3",
+      "name": "Third Team",
+      "players": ["Laci", "Karcsi", "Peti", "Zs. Laci"]
+    },
+    {
+      "id": "4",
+      "name": "Fourth Team",
+      "players": ["Laci", "Karcsi", "Peti", "Zs. Laci"]
     }
   ]
 }
