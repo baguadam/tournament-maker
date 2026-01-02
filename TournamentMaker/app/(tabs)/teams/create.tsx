@@ -12,7 +12,9 @@ import {
   Controller,
   useFieldArray,
 } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { TeamFormValues } from "@/src/types";
+import { teamsSchema } from "@/src/utils/validation";
 
 const Create = () => {
   const {
@@ -20,6 +22,8 @@ const Create = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<TeamFormValues>({
+    resolver: yupResolver(teamsSchema),
+    mode: "onBlur",
     defaultValues: {
       teamName: "",
       players: [{ name: "" }, { name: "" }, { name: "" }, { name: "" }],
@@ -84,6 +88,12 @@ const Create = () => {
               <Text style={styles.iconButtonText}>-</Text>
             </Pressable>
           )}
+
+          {!!errors.players?.[index]?.name?.message && (
+            <Text style={styles.errorText}>
+              {errors.players[index]!.name!.message}
+            </Text>
+          )}
         </View>
       ))}
       <View style={styles.buttonContaier}>
@@ -91,6 +101,7 @@ const Create = () => {
           title="Hozzáad"
           onPress={handleSubmit(onSubmit)}
           color="green"
+          disabled={!!errors.players || !!errors.teamName}
         />
       </View>
     </View>
